@@ -36,7 +36,7 @@
 % along with this program; if not, write to the Free Software
 % Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-function [EEG, com, compAct] = pop_modPMI(EEG, varargin)
+function [EEG, com, mo] = pop_modPMI(EEG, varargin)
 
 % Changed to be compatible with infomax. 11/07/2018 Makoto.
 if ~isfield(EEG.etc,'amica')
@@ -47,7 +47,7 @@ else
 end
 
 com = '';
-compAct = [];
+mo = {};
 
 %%%%!!!!!!!!%%%%%  Allow epoched data??
 % Changed to accept epoched data (based on email from Scott on 11/01/2018 'Updating the plugin with pairwise mutual information'. 11/07/2018 Makoto.

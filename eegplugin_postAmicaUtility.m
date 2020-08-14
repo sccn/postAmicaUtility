@@ -45,7 +45,7 @@
 
 function vers = eegplugin_postAmicaUtility(fig, trystrs, catchstrs)
     
-    vers = 'postAmicaUtility1.01';
+    vers = 'postAmicaUtility2.1';
     if nargin < 3
         error('eegplugin_postAmicaUtility requires 3 arguments');
     end;
