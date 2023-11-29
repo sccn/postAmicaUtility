@@ -117,7 +117,7 @@ end
 fid = fopen([outdir 'LLt'],'r');
 if fid > 0
     LLt = fread(fid,inf,'double');
-    LLt = reshape(LLt,num_models+1,length(LLt)/(num_models+1));
+    LLt = reshape(LLt,num_models+1, []]);
     fclose(fid);
     LLtset = 1;
     modout.Lht = LLt(1:num_models,:);
@@ -173,7 +173,7 @@ modout.alpha = alpha;
 fid = fopen([outdir 'mu'],'r');
 if fid > 0
     mutmp = fread(fid,num_mix*nw*num_models,'double');
-    mutmp = reshape(mutmp,num_mix,nw*num_models);
+    mutmp = reshape(mutmp,num_mix,[]);
     for h = 1:num_models
         for i = 1:nw
             mu(:,i,h) = mutmp(:,comp_list(i,h));
@@ -188,7 +188,7 @@ modout.mu = mu;
 fid = fopen([outdir 'sbeta'],'r');
 if fid > 0
     sbetatmp = fread(fid,num_mix*nw*num_models,'double');
-    sbetatmp = reshape(sbetatmp,num_mix,nw*num_models);
+    sbetatmp = reshape(sbetatmp,num_mix,[]);
     for h = 1:num_models
         for i = 1:nw
             sbeta(:,i,h) = sbetatmp(:,comp_list(i,h));
@@ -203,7 +203,7 @@ modout.sbeta = sbeta;
 fid = fopen([outdir 'rho'],'r');
 if fid > 0
     rhotmp = fread(fid,num_mix*nw*num_models,'double');
-    rhotmp = reshape(rhotmp,num_mix,nw*num_models);
+    rhotmp = reshape(rhotmp,num_mix,[]);
     for h = 1:num_models
         for i = 1:nw
             rho(:,i,h) = rhotmp(:,comp_list(i,h));
